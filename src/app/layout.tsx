@@ -4,6 +4,7 @@ import "./globals.css";
 import Provider from "@/utils/Provider";
 import Header from "./components/Header/Header";
 import Navbar from "./components/Navbar/Navbar";
+import { motion } from "framer-motion";
 
 const roboto = Roboto({
   subsets: ["latin"],

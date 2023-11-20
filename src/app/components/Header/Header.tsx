@@ -9,13 +9,8 @@ import NavbarSwitch from "./components/NavbarSwitch/NavbarSwitch";
 
 function Header() {
   return (
-    <header className="absolute left-0 top-0 flex w-screen items-center justify-between border border-red-900 pr-24 py-4">
-      <div className="flex pl-4 items-center">
-        <NavbarSwitch />
-        <h1 className="font-chackra select-none text-5xl font-bold text-violet-900">
-          DevTube
-        </h1>
-      </div>
+    <header className="absolute left-0 top-0 flex w-screen items-center justify-between border-b border-neutral-600 py-4 pr-24">
+      <NavbarSwitch />
       <input type="text" />
       <h1>login</h1>
       <ThemeSwitch />

@@ -1,18 +1,18 @@
 "use client";
 
 import { ThemeProvider } from "next-themes";
-import { useState, useEffect } from "react";
+import useMounted from "./Mounted";
 
 type Props = {
   children: React.ReactNode;
 };
 
 const Provider = ({ children }: Props) => {
-  const [mounted, setMounted] = useState<boolean>(false);
+  const { mounted } = useMounted();
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  if (!mounted) {
+    return null;
+  }
 
   if (!mounted) {
     return <>{children}</>;
