@@ -1,10 +1,3 @@
-"use client";
-
-import { AlignJustify } from "lucide-react";
-import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
-import ThemeSwitch from "./components/ThemeSwitch/ThemeSwitch";
 import NavbarSwitch from "./components/NavbarSwitch/NavbarSwitch";
 
 function Header() {
@@ -13,7 +6,6 @@ function Header() {
       <NavbarSwitch />
       <input type="text" />
       <h1>login</h1>
-      <ThemeSwitch />
     </header>
   );
 }

@@ -1,12 +1,22 @@
 "use client";
 
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import useClickOutside from "@/hooks/useClickOutside";
 import { useNavbarStore } from "@/stores/Navbar/Navbar.store";
 import useMounted from "@/utils/Mounted";
 import { AnimatePresence, motion } from "framer-motion";
 import NavbarSwitch from "../Header/components/NavbarSwitch/NavbarSwitch";
+import { Button } from "@/components/ui/button";
+import { useTheme } from "next-themes";
 
 function Navbar() {
+  const { setTheme, systemTheme } = useTheme();
+
   const isOpen = useNavbarStore((state) => state.isOpen);
   const handleOpen = useNavbarStore((state) => state.handleOpen);
   const { mounted } = useMounted();
@@ -37,7 +47,39 @@ function Navbar() {
             </div>
 
             <ul className="px-4 pt-4">
-              <li>navbar</li>
+              <li>
+                <Accordion type="single" collapsible>
+                  <AccordionItem value="item-1">
+                    <AccordionTrigger>Theme</AccordionTrigger>
+                    <AccordionContent className="pb-0">
+                      <Button
+                        onClick={() => setTheme("light")}
+                        size="none"
+                        className="w-full justify-start whitespace-normal"
+                        variant="ghost"
+                      >
+                        Light
+                      </Button>
+                      <Button
+                        onClick={() => setTheme("dark")}
+                        size="none"
+                        className="w-full justify-start whitespace-normal"
+                        variant="ghost"
+                      >
+                        Dark
+                      </Button>
+                      <Button
+                        onClick={() => setTheme(systemTheme ?? "light")}
+                        size="none"
+                        className="w-full justify-start whitespace-normal"
+                        variant="ghost"
+                      >
+                        System Default
+                      </Button>
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
+              </li>
             </ul>
           </motion.nav>
         </motion.div>
