@@ -55,7 +55,7 @@ function Navbar() {
                       <Button
                         onClick={() => setTheme("light")}
                         size="none"
-                        className="w-full justify-start whitespace-normal"
+                        className="w-full justify-start whitespace-normal py-2 pl-2"
                         variant="ghost"
                       >
                         Light
@@ -63,7 +63,7 @@ function Navbar() {
                       <Button
                         onClick={() => setTheme("dark")}
                         size="none"
-                        className="w-full justify-start whitespace-normal"
+                        className="w-full justify-start whitespace-normal py-2 pl-2"
                         variant="ghost"
                       >
                         Dark
@@ -71,7 +71,7 @@ function Navbar() {
                       <Button
                         onClick={() => setTheme(systemTheme ?? "light")}
                         size="none"
-                        className="w-full justify-start whitespace-normal"
+                        className="w-full justify-start whitespace-normal py-2 pl-2"
                         variant="ghost"
                       >
                         System Default

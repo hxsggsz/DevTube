@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import NavbarSwitch from "./components/NavbarSwitch/NavbarSwitch";
 import Link from "next/link";
 
@@ -8,12 +8,12 @@ function Header() {
       <NavbarSwitch />
       <input type="text" />
       <div className="flex gap-1">
-        <Button asChild variant="link">
-          <Link href="/login">Login</Link>
-        </Button>
-        <Button asChild>
-          <Link href="/signup">Sign Up</Link>
-        </Button>
+        <Link className={buttonVariants({ variant: "link" })} href="/login">
+          Login
+        </Link>
+        <Link className={buttonVariants()} href="/signup">
+          Sign Up
+        </Link>
       </div>
     </header>
   );

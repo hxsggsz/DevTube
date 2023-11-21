@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import { Roboto, Chakra_Petch } from "next/font/google";
 import "./globals.css";
 import Provider from "@/utils/Provider";
@@ -30,12 +31,19 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const headersList = headers();
+  // read the custom x-url header
+  const header_url = headersList.get("x-pathname") || "";
   return (
     <html lang="en">
       <body className={`${roboto.variable} ${chackra.variable}`}>
         <Provider>
-          <Header />
-          <Navbar />
+          {header_url !== "/login" && (
+            <>
+              <Header />
+              <Navbar />
+            </>
+          )}
           {children}
         </Provider>
       </body>
